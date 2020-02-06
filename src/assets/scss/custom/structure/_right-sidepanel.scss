@@ -1,0 +1,72 @@
+//
+// sideview-sidebar.scss
+//
+
+.sideview-bar {
+  background-color: $white;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0 0 rgba(0, 0, 0, 0.02);
+  display: block;
+  position: fixed;
+  transition: all 200ms ease-out;
+  width: 1000px;//$sidebar-width;
+  z-index: 9999999;
+  float: right !important;
+  right: -($sidebar-width + 10px);
+  top: 0;
+  bottom: 0;
+
+  .sideviewbar-title {
+    background-color: $bg-topbar-dark;
+    padding: 27px 25px;
+    color: $white;
+  }
+  .sideview-bar-toggle {
+    background-color: lighten($dark, 7%);
+    height: 24px;
+    width: 24px;
+    line-height: 27px;
+    color: $white;
+    text-align: center;
+    border-radius: 50%;
+    margin-top: -4px;
+
+    &:hover {
+      background-color: lighten($dark, 10%);
+    }
+  }
+}
+
+// sideviewbar overlay
+.sideviewbar-overlay {
+  background-color: rgba($dark, 0.55);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: none;
+  z-index: 9998;
+  transition: all 0.2s ease-out;
+}
+
+.sideview-bar-enabled,
+.side-details-panel {
+  .sideview-bar,
+  .side-bar {
+    right: 0;
+  }
+  .sideviewbar-overlay,
+  .sidebar-overlay {
+    display: block;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .sideview-bar,
+  .side-bar {
+    overflow: auto;
+    .slimscroll-menu {
+      height: auto !important;
+    }
+  }
+}

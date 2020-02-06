@@ -1,0 +1,204 @@
+/* Message section starts*/
+
+.message-selection {
+}
+
+.message-selection__list {
+  background-color: rgb(255, 255, 255);
+}
+
+.message-selection__list-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 16px 25px 16px 75px;
+  border-bottom: solid 1px rgb(221, 221, 221);
+  cursor: default;
+}
+
+.message-selection__list-item:hover .message-selection__message-flavor {
+  color: rgb(34, 115, 173);
+}
+
+.message-selection__message-flavor {
+  width: 200px;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  color: rgb(119, 119, 119);
+  letter-spacing: 0.5px;
+  flex: 0 0 auto;
+  transition: color 100ms linear;
+}
+
+.message-selection__message {
+  flex: 1 1 auto;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 14.5px;
+  color: rgb(85, 85, 85);
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+  text-align: left;
+  margin: 0 15px;
+}
+
+.message-selection__list-item .forward-icon {
+  fill: rgb(119, 119, 119);
+  height: 24px;
+  flex: 0 0 auto;
+  align-self: center;
+}
+
+.message-selection__list a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Message section Ends*/
+
+.selected-hcp {
+  padding: 0;
+  background-color: rgb(232, 249, 255);
+}
+
+.selected-hcp .hcp-selection__icon-header {
+  width: 60px;
+}
+
+.selected-hcp .hcp-selection__icon-cell {
+  padding: 0;
+  text-align: right;
+}
+
+/* This icon is for sorting and should be 
+ * hidden once hcp is selected */
+.selected-hcp th .arrow-upward-icon {
+  display: none;
+}
+
+/*HCP selection  Start*/
+
+.hcp-selection {
+  padding: 0 30px;
+  position: relative;
+}
+
+.hcp-selection__search {
+  position: absolute;
+  right: 30px;
+  top: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.hcp-selection__search .search-icon {
+  position: absolute;
+  left: 0;
+  height: 24px;
+  fill: rgb(85, 85, 85);
+  margin: 0 8px;
+}
+
+.hcp-selection__input {
+  box-sizing: border-box;
+  height: 40px;
+  width: 200px;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  border: solid 1px transparent;
+  border-radius: 6px;
+  padding-left: 40px;
+  font-size: 12px;
+  letter-spacing: 0.5;
+  background-color: rgb(244, 244, 244);
+  color: rgb(85, 85, 85);
+}
+
+.hcp-selection__list {
+  width: 100%;
+}
+
+.hcp-selection__list .arrow-upward-icon {
+  height: 16px;
+  fill: rgb(17, 17, 17);
+  position: relative;
+  top: 4px;
+}
+
+.hcp-selection__list .empty-circle-icon {
+  height: 24px;
+  fill: rgb(136, 136, 136);
+  cursor: pointer;
+}
+
+.hcp-selection__list .check-circle-icon {
+  height: 24px;
+  fill: rgb(85, 85, 85);
+  cursor: pointer;
+}
+
+.hcp-selection__list-item,
+.hcp-selection__list-header {
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
+.hcp-selection__list-item {
+  border-bottom: solid 1px rgb(221, 221, 221);
+}
+
+.hcp-selection__list-header > div {
+  padding: 10px 15px 20px 15px;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgb(85, 85, 85);
+  letter-spacing: 0.5px;
+  text-align: left;
+}
+
+.hcp-selection__item-icon,
+.hcp-selection__icon-header {
+  width: 60px;
+  padding: 0;
+}
+
+.hcp-selection__item-name,
+.hcp-selection__name-header {
+  width: 350px;
+}
+
+.hcp-selection__item-zip,
+.hcp-selection__zip-header {
+  width: 150px;
+}
+
+.hcp-selection__table tr {
+  height: 50px;
+}
+
+.hcp-selection__list-item > div {
+  padding: 0 15px;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgb(85, 85, 85);
+  letter-spacing: 0.5px;
+}
+
+.hcp-selection__show-more {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgb(40, 131, 209);
+  margin: 30px 0 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hcp-selection__show-more .expand-more-icon {
+  height: 24px;
+  fill: rgb(40, 131, 209);
+}
+
+/*HCP selection  Ends*/
