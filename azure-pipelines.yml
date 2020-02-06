@@ -1,43 +1,35 @@
-# Node.js Express Web App to Linux on Azure
-# Build a Node.js Express app and deploy it to Azure as a Linux web app.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
-
 trigger:
 - master
-
-  # Agent VM image name
-  vmImageName: 'ubuntu-latest'
-
 stages:
-- stage: Build
-  displayName: Build stage
-  jobs:  
-  - job: Build
-    displayName: Build
+- stage: build
+  jobs:
+  - job: build
     pool:
-      vmImage: $(vmImageName)
-      
+      vmImage: 'ubuntu-latest'
+
     steps:
     - task: NodeTool@0
       inputs:
         versionSpec: '10.x'
       displayName: 'Install Node.js'
 
-    - script: |
-        npm install
-        npm run build 
-      displayName: 'npm install, build and test'
-      
-    - task: ArchiveFiles@2
-      displayName: 'Archive files'
+    - task: Npm@1
+      displayName: 'npm install'
       inputs:
-        rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
-        includeRootFolder: false
-        archiveType: zip
-        archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-        replaceExistingArchive: true
+        workingDir: 'react-admin'
+        command: npm install
 
-    - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-      artifact: drop
+    - task: Npm@1
+      displayName: 'npm build'
+      inputs:
+        workingDir: 'react-admin'
+        command: custom
+        customCommand: npm run build
+        
 
+    - task: CopyFiles@2
+      displayName: 'Copy Files'
+      inputs:
+        SourceFolder: 'react-admin\dist'
+        TargetFolder: '$(build.artifactstagingdirectory)'
+        CleanTargetFolder: true
